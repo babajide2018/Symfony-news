@@ -1,0 +1,53 @@
+
+{% extends 'base.html.twig'%}
+{% block title%}Articles {% endblock%}
+{% block body %}
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">News Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Image</th>
+                <th scope="col">Description</th>
+                <th scope="col">Date Published</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for article in articles %}
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <th>{{article.title}}</th>
+                    <td>
+                        {{article.author}}
+                    </td>
+                    <td>
+                        <img src="{{article.urlToImage}}" alt="" style="height: 100px; width: 100px">
+                    </td>
+                    <td>
+                        {{article.description}}
+                    </td>
+                    <td>
+                        {{article.publishedAt}}
+                    </td>
+                </tr>
+                {% endfor %}
+            {#{% for content in contents.articles %}
+                {% for article in content.source %}
+
+                <tr>
+                    <th scope="row">1</th>
+                    <th>{{article.source.title}}</th>
+                    <td>
+                        <a href="" class="btn btn-dark" type="button">
+                            Show
+                        </a>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            {% endfor %}#}
+            </tbody>
+        </table>
+{%endblock%}

@@ -1,0 +1,26 @@
+
+{% extends 'base.html.twig'%}
+{% block title%}Articles {% endblock%}
+{% block body %}
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">ARTICLE</th>
+                <th scope="col">ACTION</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <th>{{article.title}}</th>
+                    <td>
+                        <a href="/article/{{article.id}}" class="btn btn-dark" type="button">
+                            Show
+                        </a>
+                    </td>
+
+                </tr>
+        </table>
+{%endblock%}
